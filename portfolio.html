@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio – Muhammad Raafi Anugerah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root{
+      --putih:   #FFFFFF;
+      --hijau:   #2ECC71;
+      --krem:    #FFF8E1;
+      --biru:    #7FDBFF;
+      --merah:   #FF4136;
+      --kuning:  #FFDC00;
+      --hitam:   #222222;
+      --abu:     #222222;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html,body{height:100%;}
+    body{
+      font-family:"Courier New",monospace;
+      color:var(--putih);
+      background:var(--abu);
+      image-rendering:pixelated;
+      letter-spacing:.5px;
+      background:url("https://i.ibb.co.com/S4SFk2GX/639c4e1ee4f1a1647419d7e835908e2a.jpg") center/cover no-repeat fixed;
+      filter:blur(0) saturate(1.1);
+      transform:scale(1.02);
+    }
+    a{text-decoration:none; color:inherit;}
+
+    /* 2D-press helper */
+    .press{
+      border:3px solid var(--hitam);
+      border-top-color:var(--putih);
+      border-left-color:var(--putih);
+      box-shadow:
+        inset -2px -2px 0 0 rgba(0,0,0,.25),
+        inset 2px 2px 0 0 rgba(255,255,255,.8);
+    }
+    .press-dark{
+      border:3px solid var(--hitam);
+      border-bottom-color:var(--hitam);
+      border-right-color:var(--hitam);
+      border-top-color:var(--putih);
+      border-left-color:var(--putih);
+      box-shadow:
+        2px 2px 0 0 rgba(0,0,0,.35),
+        inset -2px -2px 0 0 rgba(0,0,0,.25);
+    }
+
+    /* NAVBAR */
+    nav{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px 24px;
+      background:var(--biru);
+      border-bottom:4px solid var(--hitam);
+    }
+    .logo{
+      background:var(--merah); color:var(--hitam);
+      padding:8px 14px; font-weight:bold; font-size:20px;
+    }
+    nav ul{
+      display:flex; gap:12px; list-style:none;
+    }
+    nav li a{
+      display:block; background:var(--hijau); color:var(--hitam);
+      padding:8px 14px; font-size:15px;
+    }
+    nav li a:hover{background:var(--kuning);}
+
+    /* KONTEN */
+    .container{
+      max-width:840px; margin:80px auto 60px; padding:0 16px;
+    }
+    h1{
+      background:var(--kuning); color:var(--hitam);
+      display:inline-block; padding:12px 24px; font-size:32px;
+      margin-bottom:24px;
+    }
+    h2{
+        background:var(--merah); color:var(--putih);
+        display:inline-block; padding:8px 16px; font-size:20px;
+        margin:32px 0 16px;
+    }
+    .card{
+        background:var(--krem); color:var(--hitam);
+        padding:16px; margin-bottom:16px;
+    }
+    .tag{
+        background:var(--hijau); color:var(--hitam);
+        display:inline-block; padding:4px 8px; font-size:12px;
+        margin-right:6px;
+    }
+    .list{
+        padding-left:20px;
+    }
+    .list li{
+        margin-bottom:6px;
+    }
+
+    /* CLICKABLE ICONS */
+    .icon-btn{
+        cursor:pointer; transition:transform .2s;
+    }
+    .icon-btn:hover{
+        transform:scale(1.1);
+    }
+    .ripple{
+        position:absolute;
+        border-radius:50%;
+        background:rgba(0,0,0,.35);
+        transform:scale(0);
+        animation:ripple .6s ease-out;
+    }
+    @keyframes ripple{
+        to{transform:scale(4);opacity:0;}
+    }
+
+    /* SKILL DETAIL BOX */
+    .skill-detail{
+        display:none; background:var(--krem); color:var(--hitam);
+        padding:12px; margin-top:8px; font-size:13px;
+    }
+
+    /* WHATSAPP FLOAT */
+    .wa{
+        position:fixed; bottom:20px; right:20px;
+        background:var(--hijau); color:var(--hitam);
+        padding:12px 18px; font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="press-dark">
+    <div class="logo press">Raafi.</div>
+    <ul>
+      <li><a href="index.html" class="press">Home</a></li>
+      <li><a href="about.html" class="press">About</a></li>
+      <li><a href="portfolio.html" class="press">Portfolio</a></li>
+      <li><a href="contact.html" class="press">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- KONTEN -->
+  <section class="container">
+    <h1 class="press">Portfolio</h1>
+
+    <!-- 1. Featured Project -->
+    <h2 class="press">Featured Project</h2>
+
+    <div class="card press icon-btn" onclick="openModal('festival')">
+      <h3>Festival Musik Lokal 2024</h3>
+      <span class="tag press">Poster</span><span class="tag press">Branding</span>
+      <p>Menyusun visual utama event: poster digital & cetak, feed IG, serta backdrop panggung. Hasilnya? Tiket sold-out dalam 3 hari dan engagement IG naik 180% selama masa promo.</p>
+    </div>
+
+    <div class="card press icon-btn" onclick="openModal('aftermovie')">
+      <h3>After-Movie “Urban Culture 2024”</h3>
+      <span class="tag press">Video Editing</span><span class="tag press">Motion Graphic</span>
+      <p>Proyek 2 menit 15 detik – mulai dari rough-cut, color-grading, hingga animated lower-third. Klien happy, viewer retention di atas 75%, dipakai lagi untuk sponsorship tahun depan.</p>
+    </div>
+
+    <!-- 2. Proyek Lainnya (background krem) -->
+    <h2 class="press">Proyek Lainnya</h2>
+    <div class="card press">
+      <ul class="list">
+        <li><strong>Brand Identity Kopi Kekinian</strong> – Logo, kemasan cup & pouch. <em class="tag press">Logo</em><em class="tag press">Kemasan</em></li>
+        <li><strong>Short Reels Restoran Cepat Saji</strong> – 30 detik mouth-watering cut. <em class="tag press">Reels</em><em class="tag press">Food</em></li>
+        <li><strong>YouTube Thumbnail Gaming</strong> – 12 episode, CTR rata-rata 9.8%. <em class="tag press">Thumbnail</em></li>
+        <li><strong>Company Profile UMKM</strong> – 3 menit clean motion graphic. <em class="tag press">Motion</em></li>
+        <li><strong>Feed IG Bulan Ramadan</strong> – 30 posting, tone emas & hitam. <em class="tag press">Feed</em></li>
+        <li><strong>Spanduk Digital Café</strong> – 4 layout, konsep neon-retro. <em class="tag press">Spanduk</em></li>
+        <li><strong>Animated Sticker WhatsApp</strong> – 24 sticker pack bayar. <em class="tag press">Sticker</em></li>
+        <li><strong>CV Visual Artist</strong> – 2 halaman infographic. <em class="tag press">Infografis</em></li>
+      </ul>
+    </div>
+
+    <!-- 3. Skill & Tools (tombol bisa diklik + background krem saat terbuka) -->
+    <h2 class="press">Skill & Tools</h2>
+    <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <button class="press icon-btn" onclick="toggleSkill('video')">Video Editing</button>
+        <button class="press icon-btn" onclick="toggleSkill('graphic')">Graphic Design</button>
+        <button class="press icon-btn" onclick="toggleSkill('motion')">Motion Graphic</button>
+        <button class="press icon-btn" onclick="toggleSkill('tools')">Tools</button>
+    </div>
+
+    <div id="video" class="skill-detail press" style="display:none;">
+        <strong>Video Editing:</strong> Short-form content, YouTube, after-movie, color-grading, sound syncing, subtitle & caption.
+    </div>
+    <div id="graphic" class="skill-detail press" style="display:none;">
+        <strong>Graphic Design:</strong> Brand identity, poster, packaging, feed IG, logo, ilustrasi vektor, layout print-digital.
+    </div>
+    <div id="motion" class="skill-detail press" style="display:none;">
+        <strong>Motion Graphic:</strong> Lower-third, animated logo, sticker, transitions, kinetic typography, 2D explainer.
+    </div>
+    <div id="tools" class="skill-detail press" style="display:none;">
+        <strong>Tools:</strong> Photoshop • Illustrator • After Effects • Premiere Pro • Figma • Lightroom • CapCut (mobile).
+    </div>
+
+    <!-- 4. Workflow (background krem) -->
+    <h2 class="press">Workflow Kerja</h2>
+    <div class="card press">
+      <ol class="list">
+        <li><strong>Briefing</strong> – Tukar pikiran soal tujuan, target audiens & referensi.</li>
+        <li><strong>Research</strong> – Cek tren, kompetitor, dan platform output.</li>
+        <li><strong>Sketsa / Storyboard</strong> – Kirim 2-3 konsep awal (low-fidelity).</li>
+        <li><strong>Eksekusi</strong> – Mulai desain/edit, revisi maks. 2× (cepat & fleksibel).</li>
+        <li><strong>Finalisasi</strong> – Serahkan source file + export sesuai platform.</li>
+      </ol>
+    </div>
+
+    <!-- 5. Testimoni -->
+    <h2 class="press">Testimoni</h2>
+    <div class="card press">
+      “Raafi ngerti banget vibe brand kami. Hasil videonya rame, dinamis, dan tepat waktu. Bakal langgeng nih kalo ada project lagi!”  
+      <em>– Budi, Owner Coffee Shop (IG: @kopi.budi)</em>
+    </div>
+    <div class="card press">
+      “Dari brief sampe jadi cuma 4 hari. Poster event kuenya langsung bikin orang ngantri. Recommended!”  
+      <em>– Dina, Event Organizer (IG: @dinaprod)</em>
+    </div>
+
+    <!-- 6. CTA -->
+    <div class="card press" style="text-align:center; margin-top:32px;">
+      <h3>Ada project? Sini kita obrol dulu – gratis!</h3>
+      <p>Diskusi singkat via WhatsApp bisa bikin ide kamu lebih jelas. Klik tombol di pojok kanan bawah atau hubungi:</p>
+      <br>
+      <a class="btn press" href="https://wa.me/6283857673518">Chat WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/6283857673518" class="wa press">💬 WhatsApp</a>
+
+  <script>
+    function toggleSkill(id){
+      const box = document.getElementById(id);
+      const isShow = box.style.display === 'block';
+      // tutup semua
+      document.querySelectorAll('.skill-detail').forEach(b=>b.style.display='none');
+      // toggle yang diklik
+      box.style.display = isShow ? 'none' : 'block';
+    }
+    function openModal(type){
+      // Ripple effect
+      const card = event.currentTarget;
+      const ripple = document.createElement('span');
+      ripple.className='ripple';
+      const rect = card.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = event.clientX - rect.left - size/2 + 'px';
+      ripple.style.top = event.clientY - rect.top - size/2 + 'px';
+      card.appendChild(ripple);
+      setTimeout(()=>ripple.remove(), 600);
+
+      // Modal logic (simple alert for demo)
+      alert('Detail '+type+' akan segera dikirim via WhatsApp!');
+    }
+  </script>
+
+</body>
+</html>

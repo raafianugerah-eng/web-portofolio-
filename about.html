@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>About – Muhammad Raafi Anugerah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root{
+      --putih:   #FFFFFF;
+      --hijau:   #2ECC71;
+      --krem:    #FFF8E1;
+      --biru:    #7FDBFF;
+      --merah:   #FF4136;
+      --kuning:  #FFDC00;
+      --hitam:   #222222;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html,body{height:100%;}
+    body{
+      font-family:"Courier New",monospace;
+      color:var(--hitam);
+      image-rendering:pixelated;
+      letter-spacing:.5px;
+      background:url("https://i.ibb.co.com/tPDM7b7S/d565f3165e8e732e182f92a303a306e4.jpg") center/cover no-repeat fixed;
+      filter:blur(0) saturate(1.1);
+      transform:scale(1.02);
+    }
+    a{text-decoration:none; color:inherit;}
+
+    /* 2D-press helper */
+    .press{
+      border:3px solid var(--hitam);
+      border-top-color:var(--putih);
+      border-left-color:var(--putih);
+      box-shadow:
+        inset -2px -2px 0 0 rgba(0,0,0,.25),
+        inset 2px 2px 0 0 rgba(255,255,255,.8);
+    }
+    .press-dark{
+      border:3px solid var(--hitam);
+      border-bottom-color:var(--hitam);
+        border-right-color:var(--hitam);
+        border-top-color:var(--putih);
+        border-left-color:var(--putih);
+      box-shadow:
+        2px 2px 0 0 rgba(0,0,0,.35),
+        inset -2px -2px 0 0 rgba(0,0,0,.25);
+    }
+
+    /* NAVBAR */
+    nav{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px 24px;
+      background:var(--biru);
+      border-bottom:4px solid var(--hitam);
+    }
+    .logo{
+      background:var(--merah); color:var(--hitam);
+      padding:8px 14px; font-weight:bold; font-size:20px;
+    }
+    nav ul{
+      display:flex; gap:12px; list-style:none;
+    }
+    nav li a{
+      display:block; background:var(--hijau); color:var(--hitam);
+      padding:8px 14px; font-size:15px;
+    }
+    nav li a:hover{background:var(--kuning);}
+
+    /* KONTEN UTAMA */
+    .container{
+      min-height:100vh;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      padding:32px 16px;
+    }
+    .card{
+        max-width:640px; text-align:center;
+        padding:32px 24px;
+        background:var(--krem);
+        margin-bottom:16px;
+    }
+    .card h1{
+        background:var(--kuning); color:var(--hitam);
+        display:inline-block; padding:12px 24px; font-size:32px;
+        margin-bottom:16px;
+    }
+    .card p{
+        background:var(--putih); display:inline-block;
+        padding:8px 16px; margin-bottom:20px; font-size:16px;
+    }
+    .skill{
+        background:var(--hijau); color:var(--hitam);
+        display:inline-block; padding:6px 12px; margin:4px;
+        font-size:14px;
+    }
+    .btn{
+        display:inline-block; background:var(--merah); color:var(--putih);
+        padding:10px 20px; margin-top:16px; font-size:14px; cursor:pointer;
+    }
+    .btn:hover{background:var(--hijau); color:var(--hitam);}
+
+    /* KOLOM BARU BAWAH */
+    .info-box{
+        display:flex; align-items:center; gap:8px;
+        background:var(--krem); color:var(--hitam);
+        padding:12px; margin:8px auto; max-width:400px;
+        font-size:14px;
+    }
+    .color-box{
+        width:20px; height:20px; border:2px solid var(--hitam);
+    }
+
+    /* WHATSAPP FLOAT */
+    .wa{
+        position:fixed; bottom:20px; right:20px;
+        background:var(--hijau); color:var(--hitam);
+        padding:12px 18px; font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="press-dark">
+    <div class="logo press">Raafi.</div>
+    <ul>
+      <li><a href="index.html" class="press">Home</a></li>
+      <li><a href="about.html" class="press">About</a></li>
+      <li><a href="portfolio.html" class="press">Portfolio</a></li>
+      <li><a href="contact.html" class="press">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- KONTEN UTAMA -->
+  <section class="container">
+    <div class="card press">
+      <h1 class="press">Tentang Saya</h1>
+      <p class="press">
+        Muhammad Raafi Anugerah – Desainer Grafis & Video Editor yang haus akan warna, detail, dan gerak.
+      </p>
+
+      <div class="skills">
+        <span class="skill press">Photoshop</span>
+        <span class="skill press">Illustrator</span>
+        <span class="skill press">After Effects</span>
+        <span class="skill press">Premiere Pro</span>
+      </div>
+
+      <!-- Tombol bisa diklik -->
+      <button class="btn press" onclick="alert('CV akan di-download via WhatsApp!')">Download CV</button>
+    </div>
+
+    <!-- KOLOM BARU BAWAH -->
+    <!-- Color Palette -->
+    <div class="info-box press">
+        <span><strong>Color Palette Used:</strong></span>
+        <span class="color-box" style="background:#FFFFFF;"></span>
+        <span class="color-box" style="background:#2ECC71;"></span>
+        <span class="color-box" style="background:#FFF8E1;"></span>
+        <span class="color-box" style="background:#7FDBFF;"></span>
+        <span class="color-box" style="background:#FF4136;"></span>
+    </div>
+
+    <!-- Lokasi -->
+    <div class="info-box press" onclick="window.open('https://maps.app.goo.gl/JdpfTyfo6cLYKXtG7','_blank')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--hitam)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span>Jakarta, Jakarta Timur, Indonesia</span>
+    </div>
+
+    <!-- Jam Kerja -->
+    <div class="info-box press">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--hitam)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        <span>Mon-Fri 09:00-18:00 | Sat 09:00-15:00 | Sun OFF</span>
+    </div>
+  </section>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/6283857673518" class="wa press">💬 WhatsApp</a>
+
+</body>
+</html>

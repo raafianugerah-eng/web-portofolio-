@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Raafi 2D-Retro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root{
+      --putih:   #FFFFFF;
+      --hijau:   #2ECC71;
+      --krem:    #FFF8E1;
+      --biru:    #7FDBFF;
+      --merah:   #FF4136;
+      --kuning:  #FFDC00;
+      --hitam:   #222222;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html,body{height:100%;}
+    body{
+      font-family:"Courier New",monospace;
+      color:var(--hitam);
+      image-rendering:pixelated;
+      letter-spacing:.5px;
+      background:url("https://i.ibb.co.com/FLmn9SVF/ead82121d6217cc7fc4c4fc93f5b917f.jpg") center/cover no-repeat fixed;
+      filter:blur(0) saturate(1.1);
+      transform:scale(1.02);
+    }
+    a{text-decoration:none; color:inherit;}
+
+    /* 2D-press helper */
+    .press{
+      border:3px solid var(--hitam);
+      border-top-color:var(--putih);
+      border-left-color:var(--putih);
+      box-shadow:
+        inset -2px -2px 0 0 rgba(0,0,0,.25),
+        inset 2px 2px 0 0 rgba(255,255,255,.8);
+    }
+    .press-dark{
+      border:3px solid var(--hitam);
+      border-bottom-color:var(--hitam);
+      border-right-color:var(--hitam);
+      border-top-color:var(--putih);
+      border-left-color:var(--putih);
+      box-shadow:
+        2px 2px 0 0 rgba(0,0,0,.35),
+        inset -2px -2px 0 0 rgba(0,0,0,.25);
+    }
+
+    /* NAVBAR + MENU GARIS TIGA */
+    nav{
+      display:flex; justify-content:flex-start; align-items:center;
+      padding:12px 24px;
+      background:var(--biru);
+      border-bottom:4px solid var(--hitam);
+    }
+    .menu-btn{
+      background:var(--merah); color:var(--putih);
+      padding:6px 10px; font-size:20px; cursor:pointer;
+    }
+    .menu-btn:hover{background:var(--kuning); color:var(--hitam);}
+    .dropdown{
+      position:absolute; top:60px; left:24px;
+      background:var(--krem); display:none;
+      flex-direction:column; gap:4px;
+      padding:8px; z-index:10;
+    }
+    .dropdown.show{display:flex;}
+    .dropdown a{width:160px;}
+
+    /* HERO – TETAP DI TENGAH */
+    .hero{
+      max-width:600px; margin:80px auto 60px; text-align:center;
+      padding:32px 16px;
+    }
+    .hero h1{
+      background:var(--krem); color:var(--hitam);
+      display:inline-block; padding:12px 24px; font-size:40px;
+      margin-bottom:12px;
+    }
+    .hero p{
+      background:var(--putih); display:inline-block;
+      padding:8px 16px; margin-bottom:20px; font-size:18px;
+    }
+    .cta{
+      display:inline-block; background:var(--merah); color:var(--putih);
+      padding:12px 24px; font-size:18px; font-weight:bold; cursor:pointer;
+    }
+    .cta:hover{background:var(--hijau); color:var(--hitam);}
+
+    /* PORTFOLIO – SEMBUNYI AWALNYA */
+    .portfolio{
+      max-width:600px; margin:0 auto 60px; padding:32px 16px;
+      background:var(--krem); color:var(--hitam); opacity:0;
+      transform:translateY(-40px); transition:all .6s ease;
+    }
+    .portfolio.show{opacity:1; transform:translateY(0);}
+    .portfolio h2{
+      background:var(--kuning); display:inline-block; padding:8px 16px; font-size:24px;
+      margin-bottom:16px;
+    }
+    .work-card{
+      background:var(--putih); padding:12px; margin-bottom:12px;
+      cursor:pointer;
+    }
+    .work-card:hover{background:var(--kuning);}
+
+    /* WHATSAPP FLOAT */
+    .wa{
+      position:fixed; bottom:20px; right:20px;
+      background:var(--hijau); color:var(--hitam);
+      padding:12px 18px; font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR + MENU GARIS TIGA -->
+  <nav class="press-dark">
+    <div class="menu-btn press" onclick="toggleMenu()">☰</div>
+    <div id="menu" class="dropdown press">
+      <a href="index.html" class="press">Home</a>
+      <a href="about.html" class="press">About</a>
+      <a href="portfolio.html" class="press">Portfolio</a>
+      <a href="contact.html" class="press">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO – TETAP DI TENGAH -->
+  <section class="hero press">
+    <h1 class="press">Muhammad Raafi Anugerah</h1>
+    <p class="press">Desainer Grafis & Video Editor</p>
+    <div class="cta press" onclick="showWorks()">Lihat Hasil Karya Saya</div>
+  </section>
+
+  <!-- PORTFOLIO – SEMBUNYI AWALNYA -->
+  <section id="portfolio" class="portfolio press">
+    <h2 class="press">Hasil Karya Saya</h2>
+    <div class="work-card press" onclick="alert('Detail Festival Musik → WhatsApp')">
+      <strong>Festival Musik Lokal 2024</strong><br>Poster & branding → Tiket sold-out
+    </div>
+    <div class="work-card press" onclick="alert('Detail After-Movie → WhatsApp')">
+      <strong>After-Movie Urban Culture</strong><br>2 menit 15 detik → Viewer retention 75%
+    </div>
+    <div class="work-card press" onclick="alert('Detail Feed IG → WhatsApp')">
+      <strong>Feed IG Ramadan</strong><br>30 posting → Tone emas & hitam
+    </div>
+  </section>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/6283857673518" class="wa press">💬 Chat WhatsApp</a>
+
+  <script>
+    function toggleMenu(){
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+    function showWorks(){
+      const portfolio = document.getElementById('portfolio');
+      portfolio.classList.add('show');
+    }
+  </script>
+
+</body>
+</html>
